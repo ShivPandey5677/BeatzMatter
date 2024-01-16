@@ -10,10 +10,17 @@ import Register from './pages/register/register';
 import NavBar from './components/navbar/NavBar';
 import LeftBar from './components/leftbar/LeftBar';
 import Home from './pages/home/home';
-import Profile from './pages/profile/profile';
+import Profile from './pages/profile/Profile';
+import Explore from './pages/Explore';
+import Saved from './pages/Saved';
+import AllUsers from './pages/AllUsers';
+import UpdatePost from './pages/UpdatePost';
+import Posts from './pages/Posts';
+import { CreatePost, UpdateProfile } from './pages';
+
 
 function App() {
-  const currentUser=false;
+  const currentUser=true;
 
   const Layout=()=>{
     return (
@@ -23,7 +30,9 @@ function App() {
         display:"flex"
      }}>
         <LeftBar/>
+      <div style={{flex:6}}>
         <Outlet/>
+        </div>
      </div>
     </div>
     );
@@ -49,7 +58,35 @@ function App() {
         {
           path:"/profile/:id",
           element:<Profile/>
-        }
+        },
+        {
+          path: "/explore",
+          element: <Explore/>,
+        },
+        {
+          path: "/saved",
+          element: <Saved/>,
+        },
+        {
+          path: "/all-users",
+          element: <AllUsers/>,
+        },
+        {
+          path: "/create-post",
+          element: <CreatePost/>,
+        },
+        {
+          path: "/update-post/:id",
+          element: <UpdatePost/>,
+        },
+        {
+          path: "/posts/:id",
+          element: <Posts/>,
+        },
+        {
+          path: "/update-profile/:id",
+          element: <UpdateProfile/>,
+        },
        
       ]
     },
@@ -61,6 +98,8 @@ function App() {
       path: "/register",
       element: <Register/>,
     },
+    
+   
   ]);
  
     return <div >

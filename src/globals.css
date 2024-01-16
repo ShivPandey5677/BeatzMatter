@@ -10,8 +10,9 @@
   }
 
   body {
-    @apply bg-dark-1 text-white min-h-screen font-inter;
+    @apply text-black min-h-screen font-inter;
   }
+  /* bg-dark-1*/
 }
 
 @layer utilities {
@@ -219,7 +220,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px]/* bg-dark-2*/;
   }
 
   .leftsidebar-link {
@@ -237,7 +238,7 @@
 
   /* Topbar */
   .topbar {
-    @apply sticky top-0 z-50 md:hidden bg-dark-2 w-full;
+    @apply sticky top-0 z-50 md:hidden w-full;
   }
 
   /* User card */
@@ -250,7 +251,7 @@
   /* SHADCN COMPONENTS */
   /* Form */
   .shad-form_label {
-    @apply text-white !important;
+    @apply font-semibold text-black !important;
   }
 
   .shad-form_message {
@@ -258,20 +259,20 @@
   }
 
   .shad-input {
-    @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply h-12 bg-white border-2 placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   .shad-textarea {
-    @apply h-36 bg-dark-3 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    @apply h-36 bg-white rounded-xl border-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
   }
 
   /* Button */
   .shad-button_primary {
-    @apply bg-primary-500 hover:bg-primary-500 text-light-1 flex gap-2 !important;
+    @apply h-12 bg-primary-500 px-5 hover:bg-primary-500 rounded text-light-1 flex gap-2 !important;
   }
 
   .shad-button_dark_4 {
-    @apply h-12 bg-dark-4 px-5 text-light-1 flex gap-2 !important;
+    @apply h-12 bg-white px-5 text-dark-1 border-2 rounded flex gap-2 !important;
   }
 
   .shad-button_ghost {
