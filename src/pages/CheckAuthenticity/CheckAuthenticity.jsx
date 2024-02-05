@@ -37,6 +37,10 @@ const CheckAuthenticity = () => {
             <p>section is checked</p>
         </section>
     </div>
+    <div className="flex items-center ">
+  
+
+    </div>
 </div>
   );
 };
