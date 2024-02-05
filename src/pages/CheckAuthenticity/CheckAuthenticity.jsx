@@ -11,7 +11,7 @@ const CheckAuthenticity = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="border border-gray-300 p-2 rounded-md focus:outline-none focus:border-purple-400"
+          className="border border-gray-300 p-2 rounded-md focus:outline-none focus:border-purple-400 text-black"
         />
         <button
           className="ml-2 bg-black text-white px-4 py-2 rounded-md"
