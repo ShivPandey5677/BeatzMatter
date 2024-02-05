@@ -16,7 +16,7 @@ export const sidebarLinks = [
     },
     {
       imgURL: "/assets/images/bookmark.svg",
-      route: "/saved",
+      route: "/checkauthenticity",
       label: "Check Authenticity",
     },
     {

@@ -21,6 +21,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/authContext';
 import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
 import AddProduct from './pages/AddProduct/addproduct';
+import CheckAuthenticity from './pages/CheckAuthenticity/CheckAuthenticity';
 
 
 function App() {
@@ -70,8 +71,8 @@ function App() {
           element: <Explore/>,
         },
         {
-          path: "/saved",
-          element: <Saved/>,
+          path: "/checkauthenticity",
+          element: <CheckAuthenticity/>,
         },
         {
           path: "/all-users",
