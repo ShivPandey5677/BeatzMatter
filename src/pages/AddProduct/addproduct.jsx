@@ -8,13 +8,13 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="flex flex-1 bg-primary-500">
-    <div className="common-container bg-primary-500">
-   <div className="max-w-5xl flex-start gap-3 justify-start w-full bg-primary-500">
+    <div className="flex flex-1 ">
+    <div className="common-container ">
+   <div className="max-w-5xl flex-start gap-3 justify-start w-full ">
     <PostAddIcon width ={36} height ={36}></PostAddIcon>
-    <h2 className="h3-bold md:h2-bold text-left w-full bg-primary-500">Add Product</h2>
+    <h2 className="h3-bold md:h2-bold text-left w-full ">Add Product</h2>
    </div>
-        <div className="flex flex-col gap-9 w-full max-w-5xl bg-primary-500">
+        <div className="flex flex-col gap-9 w-full max-w-5xl ">
           <form id="product-form" className="flex flex-col gap-9 w-full max-w-5xl" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-5 w-full max-w-5xl">
               <label htmlFor="product-name" className="shad-form_label semi-bold">Product Name</label>
@@ -33,7 +33,7 @@ const AddProduct = () => {
               <FileUploader/>
             </div>
             <div className="flex gap-4 items-center justify-end">
-              <button type="submit" className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add Product</button>
+              <button type="submit" className="px-6 py-3 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add Product</button>
             </div>
           </form>
         </div>
