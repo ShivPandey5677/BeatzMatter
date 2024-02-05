@@ -1,5 +1,6 @@
 import React from 'react';
-
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import FileUploader from '../../components/shared/FileUploader';
 const AddProduct = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -7,33 +8,38 @@ const AddProduct = () => {
   };
 
   return (
-    <section className="home-section">
-      <div className="home-content">
-        <div className="add-product-box bg-white p-6 rounded-lg shadow-md">
-          <form id="product-form" onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="product-name" className="text-sm font-medium text-gray-600">Product Name</label>
-              <input type="text" id="product-name" name="product-name" className="mt-1 p-2 w-full border rounded-md" required />
+    <div className="flex flex-1 bg-primary-500">
+    <div className="common-container bg-primary-500">
+   <div className="max-w-5xl flex-start gap-3 justify-start w-full bg-primary-500">
+    <PostAddIcon width ={36} height ={36}></PostAddIcon>
+    <h2 className="h3-bold md:h2-bold text-left w-full bg-primary-500">Add Product</h2>
+   </div>
+        <div className="flex flex-col gap-9 w-full max-w-5xl bg-primary-500">
+          <form id="product-form" className="flex flex-col gap-9 w-full max-w-5xl" onSubmit={handleSubmit}>
+            <div className="flex flex-col gap-5 w-full max-w-5xl">
+              <label htmlFor="product-name" className="shad-form_label semi-bold">Product Name</label>
+              <input type="text" id="product-name" name="product-name" className="shad-input border-primary-500 rounded-md" required />
             </div>
-            <div className="mb-4">
-              <label htmlFor="product-description" className="text-sm font-medium text-gray-600">Description</label>
-              <textarea id="product-description" name="product-description" className="mt-1 p-2 w-full border rounded-md" required />
+            <div className="flex flex-col gap-5 w-full max-w-5xl">
+              <label htmlFor="product-description" className="shad-form_label semi-bold">Description</label>
+              <textarea id="product-description" name="product-description" className="shad-textarea custom-scrollbar border-4 border-primary-500" required />
             </div>
-            <div className="mb-4">
-              <label htmlFor="product-price" className="text-sm font-medium text-gray-600">Price (Rs.)</label>
-              <input type="number" id="product-price" name="product-price" className="mt-1 p-2 w-full border rounded-md" required />
+            <div className="flex flex-col gap-5 w-full max-w-5xl">
+              <label htmlFor="product-price" className="shad-form_label semi-bold">Price (Rs.)</label>
+              <input type="number" id="product-price" name="product-price" className="shad-input border-primary-500 rounded-md" required />
             </div>
-            <div className="mb-4">
-              <label htmlFor="product-image" className="text-sm font-medium text-gray-600">Product Image</label>
-              <input type="file" id="product-image" name="product-image" className="mt-1 p-2 w-full border rounded-md" accept="image/*" required />
+            <div className="flex flex-col gap-5 w-full max-w-5xl">
+              <label htmlFor="product-image" className="shad-form_label semi-bold">Product Image</label>
+              <FileUploader/>
             </div>
-            <div className="mb-4">
-              <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add Product</button>
+            <div className="flex gap-4 items-center justify-end">
+              <button type="submit" className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add Product</button>
             </div>
           </form>
         </div>
-      </div>
-    </section>
+        </div>
+      
+    </div>
   );
 };
 
