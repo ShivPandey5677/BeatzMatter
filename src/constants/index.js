@@ -17,12 +17,12 @@ export const sidebarLinks = [
     {
       imgURL: "/assets/images/bookmark.svg",
       route: "/checkauthenticity",
-      label: "Check Authenticity",
+      label: "Check Catalouge Score",
     },
     {
       imgURL: "/assets/images/gallery-add.svg",
       route: "/AddProduct",
-      label: "Add Product",
+      label: "Add Catalogue",
     },
     
   ];

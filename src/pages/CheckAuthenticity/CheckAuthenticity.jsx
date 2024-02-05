@@ -6,7 +6,6 @@
 
 import SmallDiv from "../../components/SmallSections/smallsection";
 
-
 const CheckAuthenticity = () => {
   return (
     <div className="flex flex-col">
