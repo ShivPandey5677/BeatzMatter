@@ -4,26 +4,26 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 // import axios from "axios";
 const Register = () => {
-//   const [inputs, setInputs] = useState({
-//     username: "",
-//     email: "",
-//     password: "",
-//     name: "",
-//   });
-//   const [err, setErr] = useState(null);
-//   const navigate = useNavigate();
-//   const handleChange=e=>{
-//     setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
-//   }
-//  const handleClick=async e=>{
-//   e.preventDefault();
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+    name: "",
+  });
+  const [err, setErr] = useState(null);
+  const navigate = useNavigate();
+  const handleChange=e=>{
+    setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
+  }
+ const handleClick=async e=>{
+  e.preventDefault();
 
-//   try{
-//     await axios.post("http://localhost:8800/api/auth/register",inputs)
-//   }catch(err){
-//     setErr(err.response.data);
-//   }
-//  }
+  try{
+    await axios.post("http://localhost:8800/api/auth/register",inputs)
+  }catch(err){
+    setErr(err.response.data);
+  }
+ }
   return (
     <div className="h-screen bg-purple-300 flex items-center justify-center">
   <div className="w-1/2 flex flex-row-reverse bg-white rounded-2xl overflow-hidden min-h-96">
@@ -48,32 +48,32 @@ const Register = () => {
           type="text"
           placeholder="Username"
           name="username"
-          // onChange={handleChange}
+          onChange={handleChange}
           className="border-none border-b-2 border-lightgray p-2"
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
-          // onChange={handleChange}
+          onChange={handleChange}
           className="border-none border-b-2 border-lightgray p-2"
         />
         <input
           type="password"
           placeholder="Password"
           name="password"
-          // onChange={handleChange}
+          onChange={handleChange}
           className="border-none border-b-2 border-lightgray p-2"
         />
         <input
           type="text"
           placeholder="Name"
           name="name"
-          // onChange={handleChange}
+          onChange={handleChange}
           className="border-none border-b-2 border-lightgray p-2"
         />
         <button
-          // onClick={handleClick}
+          onClick={handleClick}
           className="w-1/2 p-2 border-none bg-purple-600 text-white font-bold cursor-pointer"
         >
           Register

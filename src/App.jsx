@@ -25,12 +25,12 @@ import AddProduct from './pages/AddProduct/addproduct';
 
 function App() {
   const {currentUser}=useContext(AuthContext);
-//  const queryClient=new QueryClient();
+ const queryClient=new QueryClient();
   const Layout=()=>{
     return (
-      // <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
        <div>
-      {/* <NavBar/> */}
+      <NavBar/>
      <div style={{
         display:"flex"
      }}>
@@ -41,7 +41,7 @@ function App() {
         </div>
      </div>
     </div>
-    // </QueryClientProvider>
+    </QueryClientProvider>
     );
 
   };
@@ -55,7 +55,9 @@ function App() {
     {
       path:"/",
       element:
-        <Layout/>,
+      <ProtectedRoute>
+      <Layout/>
+      </ProtectedRoute>,
       children:[
         {
           path:"/",

@@ -9,7 +9,7 @@ import { AuthContext } from '../../context/authContext';
 
 const LeftBar = () => {
   const { pathname } = useLocation();
-  // const { currentUser } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <nav className="leftsidebar" style={{ backgroundColor: 'rgba(245, 245, 245, 1)' }}>
@@ -17,11 +17,11 @@ const LeftBar = () => {
         <Link to="/" className="flex gap-3 items-center">
           <img className="rounded-full" src="/assets/images/fotor-ai-20240205155222.jpg" alt="" width={170} height={36} />
         </Link>
-        <Link to={`/profile/:id`} className="flex gap-3 items-center">
+        <Link to={`/profile/${currentUser.id}`} className="flex gap-3 items-center">
           <img src="/assets/images/profile-placeholder.svg" alt="profile" className="h-14 w-14 rounded-full" />
           <div className="flex flex-col">
-            <p className="body-bold">John Doe</p>
-            <p className="small-regular text-light-3">User Name</p>
+            <p className="body-bold">{currentUser.name}</p>
+            <p className="small-regular text-light-3">{currentUser.username}</p>
           </div>
         </Link>
 

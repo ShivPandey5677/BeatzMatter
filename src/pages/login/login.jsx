@@ -7,26 +7,26 @@ const Login  = () => {
     username: "",
     password: "",
   });
-  // const [err, setErr] = useState(null);
-  // const navigate=useNavigate();
-  // const handleChange=(e)=>{
-  //   setInputs((prev)=>({...prev,[e.target.name]:e.target.value}))
-  // }
-  // const {login}=useContext(AuthContext);
-  // const handleLogin=async (e)=>{
-  //   e.preventDefault()
-  //   try{
-  //   const res=await login(inputs);
-  //   navigate("/")
-  //   }catch(err){
-  //     if (err.response && err.response.data && err.response.data.message) {
-  //       setErr(err.response.data.message);
-  //     } else {
-  //       setErr("An unexpected error occurred.");
-  //     }
-  //   }
-  //   // login();
-  // }
+  const [err, setErr] = useState(null);
+  const navigate=useNavigate();
+  const handleChange=(e)=>{
+    setInputs((prev)=>({...prev,[e.target.name]:e.target.value}))
+  }
+  const {login}=useContext(AuthContext);
+  const handleLogin=async (e)=>{
+    e.preventDefault()
+    try{
+    const res=await login(inputs);
+    navigate("/")
+    }catch(err){
+      if (err.response && err.response.data && err.response.data.message) {
+        setErr(err.response.data.message);
+      } else {
+        setErr("An unexpected error occurred.");
+      }
+    }
+    // login();
+  }
   return (
     <div className=" flex items-center justify-center h-lvh bg-[rgb(193,190,255)]">
       <div className="w-1/2 flex bg-light-1 rounded-[10px] min-h-[600px] overflow-hidden">
@@ -50,17 +50,17 @@ const Login  = () => {
               placeholder="Username"
               name="username"
               className="border-none border-b border-lightGray p-5"
-              // onChange={handleChange}
+              onChange={handleChange}
             />
             <input
               type="password"
               placeholder="Password"
               name="password"
               className="border-none border-b border-lightGray p-5"
-              // onChange={handleChange}
+              onChange={handleChange}
             />
-  
-            <button className="w-1/2 p-2 border-none bg-purple-600 text-white font-bold cursor-pointer mt-4">Login</button>
+              {err && err}
+            <button className="w-1/2 p-2 border-none bg-purple-600 text-white font-bold cursor-pointer mt-4" onClick={handleLogin}>Login</button>
           </form>
         </div>
       </div>
