@@ -6,6 +6,9 @@ const Home = () => {
   const addProductHandler = () => {
     // Add logic here if needed before redirecting
   };
+  const CheckAuthenticityHandler = () => {
+    // Add logic here if needed before redirecting
+  };
 
   return (
     <div className="flex flex-1 w-full bg-light">
@@ -25,9 +28,14 @@ const Home = () => {
               ADD PRODUCT
             </button>
           </Link>
-          <button className="bg-transparent hover:text-white px-4 py-2 bg-purple-500 hover:bg-purple-700 rounded transition duration-300 ease-in-out">
+          <Link to="/checkauthenticity">
+          <button className="bg-transparent hover:text-white px-4 py-2 bg-purple-500 hover:bg-purple-700 rounded transition duration-300 ease-in-out"
+            onClick={CheckAuthenticityHandler}
+          >
             CHECK AUTHENTICITY
+            
           </button>
+          </Link>
         </div>
       </div>
     </div>
