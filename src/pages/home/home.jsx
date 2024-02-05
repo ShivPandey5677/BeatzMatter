@@ -15,7 +15,7 @@ const Home = () => {
       <div className="home-container w-full">
       <h2 className="bold text-black text-4xl"> SCORE CATALYST</h2>
 
-<Link to="/explore">
+     <Link to="/explore">
     <button
       className="bg-transparent hover:text-white px-4 py-2 bg-purple-500 hover:bg-purple-700 rounded transition duration-300 ease-in-out"
     >

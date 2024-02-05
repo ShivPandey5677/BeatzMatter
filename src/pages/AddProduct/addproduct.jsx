@@ -33,7 +33,7 @@ const AddProduct = () => {
               <FileUploader/>
             </div>
             <div className="flex gap-4 items-center justify-end">
-              <button type="submit" className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add Product</button>
+              <button type="submit" className="px-6 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={handleSubmit}>Add Product</button>
             </div>
           </form>
         </div>

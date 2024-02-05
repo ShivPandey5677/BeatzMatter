@@ -12,11 +12,8 @@ import LeftBar from './components/leftbar/LeftBar';
 import Home from './pages/home/home';
 import Profile from './pages/profile/profile';
 import Explore from './pages/Explore';
-import Saved from './pages/Saved';
 import AllUsers from './pages/AllUsers';
-import UpdatePost from './pages/UpdatePost';
 import Posts from './pages/Posts';
-import { CreatePost, UpdateProfile } from './pages';
 import { useContext } from 'react';
 import { AuthContext } from './context/authContext';
 import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
@@ -83,14 +80,6 @@ function App() {
         {
           path: "/AddProduct",
           element: <AddProduct/>,
-        },
-        {
-          path: "/update-post/:id",
-          element: <UpdatePost/>,
-        },
-        {
-          path: "/update-profile/:id",
-          element: <UpdateProfile/>,
         },
        
       ]
