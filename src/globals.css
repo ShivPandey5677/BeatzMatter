@@ -220,7 +220,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-white
+    @apply hidden md:flex px-6 py-10 flex flex-col justify-between min-w-[270px] bg-white
   }
 
   .leftsidebar-link {

@@ -32,7 +32,6 @@ function App() {
      <div style={{
         display:"flex"
      }}>
-      <NavBar/>
         <LeftBar/>
       <div style={{flex:6}}>
         <Outlet/>
