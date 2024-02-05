@@ -12,23 +12,19 @@ export const sidebarLinks = [
     {
       imgURL: "/assets/images/people.svg",
       route: "/all-users",
-      label: "People",
+      label: "Products",
     },
     {
       imgURL: "/assets/images/bookmark.svg",
       route: "/saved",
-      label: "Saved",
+      label: "Check Authenticity",
     },
     {
       imgURL: "/assets/images/gallery-add.svg",
-      route: "/create-post",
-      label: "Create Post",
+      route: "/AddProduct",
+      label: "Add Product",
     },
-    {
-      imgURL: "/assets/images/game-development-icon.svg",
-      route: "/games",
-      label: "Games",
-    },
+    
   ];
   
   export const bottombarLinks = [

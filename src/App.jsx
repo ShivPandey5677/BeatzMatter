@@ -20,26 +20,28 @@ import { CreatePost, UpdateProfile } from './pages';
 import { useContext } from 'react';
 import { AuthContext } from './context/authContext';
 import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
+import AddProduct from './pages/AddProduct/addproduct';
 
 
 function App() {
   const {currentUser}=useContext(AuthContext);
- const queryClient=new QueryClient();
+//  const queryClient=new QueryClient();
   const Layout=()=>{
     return (
-      <QueryClientProvider client={queryClient}>
+      // <QueryClientProvider client={queryClient}>
        <div>
-      <NavBar/>
+      {/* <NavBar/> */}
      <div style={{
         display:"flex"
      }}>
+      <NavBar/>
         <LeftBar/>
       <div style={{flex:6}}>
         <Outlet/>
         </div>
      </div>
     </div>
-    </QueryClientProvider>
+    // </QueryClientProvider>
     );
 
   };
@@ -52,9 +54,8 @@ function App() {
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<ProtectedRoute>
-        <Layout/>
-        </ProtectedRoute>,
+      element:
+        <Layout/>,
       children:[
         {
           path:"/",
@@ -77,8 +78,8 @@ function App() {
           element: <AllUsers/>,
         },
         {
-          path: "/create-post",
-          element: <CreatePost/>,
+          path: "/AddProduct",
+          element: <AddProduct/>,
         },
         {
           path: "/update-post/:id",
