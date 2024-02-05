@@ -1,5 +1,10 @@
 // src/App.js
 
+
+
+
+import Circular from "../../components/PercentageCheck/circular";
+
 import SmallDiv from "../../components/SmallSections/smallsection";
 
 const CheckAuthenticity = () => {
@@ -11,7 +16,7 @@ const CheckAuthenticity = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="border border-gray-300 p-2 rounded-md focus:outline-none focus:border-purple-400 text-black"
+          className="border border-gray-300 p-2 rounded-md focus:outline-none focus:border-purple-400"
         />
         <button
           className="ml-2 bg-black text-light-1 px-4 py-2 rounded-md"
@@ -40,6 +45,11 @@ const CheckAuthenticity = () => {
         <SmallDiv/>
         <SmallDiv/>
         <SmallDiv/>
+    </div>
+    <div className="flex items-center ">
+
+
+   
     </div>
 </div>
   );
