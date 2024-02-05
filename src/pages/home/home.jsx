@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  // Assuming you have a route named "/add-product" for adding a product
+  // Assuming you have a route named "/AddProduct" for adding a product
   const addProductHandler = () => {
     // Add logic here if needed before redirecting
   };
