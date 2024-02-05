@@ -39,8 +39,6 @@ const LeftBar = () => {
           })}
         </ul>
       </div>
-      {/* Divider Line */}
-      <div className="h-full bg-gray-500 w-2"></div>
       <Button className='shad-button_ghost pt-10 pl-4'>
         <img src="/assets/images/logout.svg" alt="logout" />
         <p className="small-medium lg:base-medium">Logout</p>

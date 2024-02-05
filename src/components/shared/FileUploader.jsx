@@ -25,7 +25,7 @@ const FileUploader = () => {
            <img src="/assets/images/file-upload.svg" alt="file-upload" width={96} height={77}/>
            <h3 className="base-medium text-light-2 mb-2 mt-6"></h3>
            <p className="text-white small-regular mb-6">.mp3,.wav</p>
-            <input className="shad-button-dark_4 text-primary-500 border rounded item-center" value="Select from Computer"/>        
+            <input className="shad-button-dark_4 text-dark border rounded item-center" value="Select from Computer"/>        
         </div>
       )
         
