@@ -13,6 +13,15 @@ const Home = () => {
   return (
     <div className="flex flex-1 w-full bg-light">
       <div className="home-container w-full">
+        <h2 className="bold text-black text-4xl"> SCORE CATALYST</h2>
+
+        <Link to="/explore">
+            <button
+              className="bg-transparent hover:text-white px-4 py-2 bg-purple-500 hover:bg-purple-700 rounded transition duration-300 ease-in-out"
+            >
+             EXPLORE MORE ABOUT US
+            </button>
+            </Link>
         <img
           src="/assets/images/_4fdadfe4-ea0a-4d7e-8335-d59039a6a0b0.jpeg"
           alt="Landscape Image"
