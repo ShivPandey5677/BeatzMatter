@@ -1,5 +1,7 @@
 // src/App.js
 
+import SmallDiv from "../../components/SmallSections/smallsection";
+
 const CheckAuthenticity = () => {
   return (
     <div className="flex flex-col">
@@ -28,14 +30,16 @@ const CheckAuthenticity = () => {
           className="w-8 h-8 rounded-full mr-2"
         />
         
+        
     
         <div className="text-sm font-semibold">Binary Bosses</div>
       </div>
     </header>
-    <div>
-        <section>
-            <p>section is checked</p>
-        </section>
+    <div className="flex mt-4">
+        <SmallDiv/>
+        <SmallDiv/>
+        <SmallDiv/>
+        <SmallDiv/>
     </div>
 </div>
   );
