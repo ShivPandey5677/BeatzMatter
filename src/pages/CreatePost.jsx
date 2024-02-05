@@ -2,6 +2,7 @@ import React from 'react'
 import PostForm from '../components/forms/PostForm'
 import PostAddIcon from '@mui/icons-material/PostAdd';
 
+
 const CreatePost = () => {
   return (
     <div className="flex flex-1 bg-primary-500">
