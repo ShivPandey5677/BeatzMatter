@@ -10,20 +10,24 @@ import Register from './pages/register/register';
 import NavBar from './components/navbar/NavBar';
 import LeftBar from './components/leftbar/LeftBar';
 import Home from './pages/home/home';
-import Profile from './pages/profile/Profile';
+import Profile from './pages/profile/profile';
 import Explore from './pages/Explore';
 import Saved from './pages/Saved';
 import AllUsers from './pages/AllUsers';
 import UpdatePost from './pages/UpdatePost';
 import Posts from './pages/Posts';
 import { CreatePost, UpdateProfile } from './pages';
+import { useContext } from 'react';
+import { AuthContext } from './context/authContext';
+import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
 
 
 function App() {
-  const currentUser=true;
-
+  const {currentUser}=useContext(AuthContext);
+ const queryClient=new QueryClient();
   const Layout=()=>{
     return (
+      <QueryClientProvider client={queryClient}>
        <div>
       <NavBar/>
      <div style={{
@@ -35,6 +39,7 @@ function App() {
         </div>
      </div>
     </div>
+    </QueryClientProvider>
     );
 
   };
@@ -78,10 +83,6 @@ function App() {
         {
           path: "/update-post/:id",
           element: <UpdatePost/>,
-        },
-        {
-          path: "/posts/:id",
-          element: <Posts/>,
         },
         {
           path: "/update-profile/:id",

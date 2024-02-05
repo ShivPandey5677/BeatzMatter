@@ -1,6 +1,7 @@
 import React from 'react'
 import Loader from '../../components/shared/Loader';
 import PostCard from '../../components/shared/PostCard';
+import Posts from '../Posts';
 
 const Home = () => {
   const isPostLoading=false;
@@ -14,7 +15,7 @@ const Home = () => {
     <Loader/>
   ):(
     <ul className="flex flex-col flex-1 gap-9 w-full">
-     <PostCard />
+     <Posts />
     </ul>
   )}
         </div>
