@@ -3,9 +3,9 @@
 
 
 
-import Circular from "../../components/PercentageCheck/circular";
 
 import SmallDiv from "../../components/SmallSections/smallsection";
+
 
 const CheckAuthenticity = () => {
   return (

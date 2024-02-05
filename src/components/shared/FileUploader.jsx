@@ -10,7 +10,7 @@ const FileUploader = () => {
       }, [])
       const {getRootProps, getInputProps} = useDropzone({onDrop})
   return (
-    <div {...getRootProps()} className="flex flex-center flex-col bg-primary-500 border-4 border-white rounded-xl cursor-pointer">
+    <div {...getRootProps()} className="flex flex-center flex-col bg-purple-600 border-4 border-white rounded-xl cursor-pointer">
     <input {...getInputProps()} className="cursor-pointer"/>
     {
       fileUrl ?(
@@ -24,8 +24,8 @@ const FileUploader = () => {
         <div className="file_uploader-box">
            <img src="/assets/images/file-upload.svg" alt="file-upload" width={96} height={77}/>
            <h3 className="base-medium text-light-2 mb-2 mt-6"></h3>
-           <p className="text-white small-regular mb-6">.mp3,.wav</p>
-            <input className="shad-button-dark_4 text-dark border rounded item-center" value="Select from Computer"/>        
+           <p className="text-white small-regular mb-6 p-5">.mp3,.wav</p>
+            <input className="shad-button-dark_4 text-dark border rounded item-center px-3 py-2" value="Select from Computer"/>        
         </div>
       )
         
