@@ -7,14 +7,61 @@ const CatalogueList = () => {
   const controls = useAnimation();
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCatalogue, setFilteredCatalogue] = useState([]);
-
   const catalogueData = [
-    { id: 1, name: 'Furniture', location: 'Mumbai, India', rating: 8.5, sellerEmail: 'seller1@gmail.com', link: '/catalogue/1' },
-    { id: 2, name: 'Catalogue Two', location: 'Delhi, India', rating: 9.0, sellerEmail: 'seller2@gmail.com', link: '/catalogue/2' },
-    { id: 3, name: 'Catalogue Three', location: 'Noida, India', rating: 5.2, sellerEmail: 'seller3@gmail.com', link: '/catalogue/3' },
-    { id: 4, name: 'Catalogue Four', location: 'Bangalore, India', rating: 6.2, sellerEmail: 'seller4@gmail.com', link: '/catalogue/4' },
-    { id: 5, name: 'Catalogue Five', location: 'Bangalore, India', rating: 3.2, sellerEmail: 'seller5@gmail.com', link: '/catalogue/5' },
-    { id: 6, name: 'Catalogue Six', location: 'Bangalore, India', rating: 7.2, sellerEmail: 'seller6@gmail.com', link: '/catalogue/6' },
+    {
+      id: 1,
+      name: 'Furniture',
+      location: 'Mumbai, India',
+      rating: 8.5,
+      sellerEmail: 'seller1@gmail.com',
+      link: '/catalogue/1',
+      imageSrc: 'https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg', // Replace with actual image URL
+    },
+    {
+      id: 2,
+      name: 'fridge',
+      location: 'Delhi, India',
+      rating: 9.0,
+      sellerEmail: 'seller2@gmail.com',
+      link: '/catalogue/2',
+      imageSrc: 'https://images.pexels.com/photos/3230214/pexels-photo-3230214.jpeg?auto=compress&cs=tinysrgb&w=800', // Replace with actual image URL
+    },
+    {
+      id: 3,
+      name: 'bicycle',
+      location: 'Noida, India',
+      rating: 5.2,
+      sellerEmail: 'seller3@gmail.com',
+      link: '/catalogue/3',
+      imageSrc: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=800', // Replace with actual image URL
+    },
+    {
+      id: 4,
+      name: 'note book',
+      location: 'Bangalore, India',
+      rating: 6.2,
+      sellerEmail: 'seller4@gmail.com',
+      link: '/catalogue/4',
+      imageSrc: 'https://images.pexels.com/photos/616849/pexels-photo-616849.jpeg?auto=compress&cs=tinysrgb&w=800', // Replace with actual image URL
+    },
+    {
+      id: 5,
+      name: 'utensils',
+      location: 'Bangalore, India',
+      rating: 3.2,
+      sellerEmail: 'seller5@gmail.com',
+      link: '/catalogue/5',
+      imageSrc: 'https://images.pexels.com/photos/3379322/pexels-photo-3379322.jpeg?auto=compress&cs=tinysrgb&w=800', // Replace with actual image URL
+    },
+    {
+      id: 6,
+      name: 'electronics',
+      location: 'Bangalore, India',
+      rating: 7.2,
+      sellerEmail: 'seller6@gmail.com',
+      link: '/catalogue/6',
+      imageSrc: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=800', // Replace with actual image URL
+    },
   ];
 
   useEffect(() => {
@@ -50,7 +97,7 @@ const CatalogueList = () => {
         </div>
         <div className="relative">
           <img
-            src="path_to_profile_pic.jpg" // Add path to your profile picture
+            src="https://via.placeholder.com/50" 
             alt="Profile"
             className="w-8 h-8 rounded-full cursor-pointer"
             whileHover={{ scale: 1.2 }}
@@ -91,7 +138,7 @@ const CatalogueList = () => {
                   whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
                 >
                   <img
-                    src={`path_to_images/${catalogue.id % 2 === 0 ? 'large_image.jpg' : 'small_image.jpg'}`}
+                    src={catalogue.imageSrc}
                     alt={`Catalogue ${catalogue.id}`}
                     className="w-full h-32 object-cover rounded-md mb-4"
                   />
@@ -127,12 +174,14 @@ const CatalogueList = () => {
         )}
       </main>
       <footer className="py-4 px-8 bg-gray-900 text-center">
-        <motion.div
-          className="text-blue-400 underline text-lg"
-          whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
-        >
-          Explore All
-        </motion.div>
+        <Link to="/explore-all" className="text-blue-400 underline text-lg">
+          <motion.div
+            whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
+            whileTap={{ scale: 0.8, transition: { duration: 0.1 } }}
+          >
+            Explore All
+          </motion.div>
+        </Link>
       </footer>
     </div>
   );

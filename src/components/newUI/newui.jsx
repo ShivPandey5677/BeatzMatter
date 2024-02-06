@@ -10,7 +10,7 @@ const NewUI = () => {
     const timeout = setTimeout(() => {
       setIsLoaded(true);
       controls.start({ opacity: 1, translateY: 0, transition: { duration: 0.3 } });
-    }, ); // Simulating a 3-second loading time, adjust as needed
+    }, 100); // Simulating a 3-second loading time, adjust as needed
 
     return () => clearTimeout(timeout);
   }, [controls]);
@@ -73,7 +73,7 @@ const NewUI = () => {
       </main>
       {isLoaded && (
         <motion.div
-          className="fixed top-0 left-0 w-full h-full flex items-center justify-center"
+          className=" top-0 left-0 w-full h-full flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -84,25 +84,27 @@ const NewUI = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <Link to="/AddProduct">
-              <motion.button
-                whileHover={{ scale: 1.1, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)' }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-purple-800 text-white hover:bg-purple-700 px-8 py-4 rounded-full transition duration-300 ease-in-out"
-              >
-                ADD CATALOGUE
-              </motion.button>
-            </Link>
+         <div className="flex items-center justify-center gap-3">
+                <Link to="/AddProduct">
+                  <motion.button
+                    whileHover={{ scale: 1.1, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)' }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-purple-800 text-white hover:bg-purple-700 px-8 py-4 rounded-full transition duration-300 ease-in-out"
+                  >
+                    ADD CATALOGUE
+                  </motion.button>
+                </Link>
 
-            <Link to="/CheckAuthenticity">
-              <motion.button
-                whileHover={{ scale: 1.1, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)' }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-purple-800 text-white hover:bg-purple-700 px-8 py-4 rounded-full transition duration-300 ease-in-out"
-              >
-                CHECK CATALOGUE
-              </motion.button>
-            </Link>
+                <Link to="/CheckAuthenticity">
+                  <motion.button
+                    whileHover={{ scale: 1.1, boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.3)' }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-purple-800 text-white hover:bg-purple-700 px-8 py-4 rounded-full transition duration-300 ease-in-out"
+                  >
+                    CHECK CATALOGUE
+                  </motion.button>
+                </Link>
+            </div>
           </motion.div>
         </motion.div>
       )}
