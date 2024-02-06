@@ -52,7 +52,7 @@ const Profile = () => {
             </a>
         </div>
         <div className="flex flex-1 flex-col items-center gap-[10px]">
-          <span className="text-[30px] font-[500]">John Doe</span>
+          <span className="text-[30px] font-[500]">Binary Bosses</span>
           <div className="w-full flex flex-1 items-center justify-around">
             <div className="flex items-center gap-[5px] text-[#555]">
               <PlaceIcon/>
@@ -69,12 +69,12 @@ const Profile = () => {
                 <MoreVertIcon />
         </div>
       </div>
-        
-    </div>
-    </>)}
-    </div>
-   
-  )
-}
 
-export default Profile
+    </div>
+    </>
+      )}
+</div>
+
+);
+      }
+export default Profile;

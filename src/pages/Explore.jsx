@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CatalogueList from '../components/catalougeList/catalougeList'
 import { makeRequest } from '../axios';
 import { useQuery } from '@tanstack/react-query';
 import { motion,useAnimation } from 'framer-motion';
+import { AuthContext } from '../context/authContext';
+import { Link } from 'react-router-dom';
 
 const Explore = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const controls = useAnimation();
   const [searchTerm, setSearchTerm] = useState('');
+  const {currentUser}=useContext(AuthContext);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoaded(true);
@@ -56,12 +59,14 @@ const Explore = () => {
           />
         </div>
         <div className="relative">
+          <Link to={`/profile/${currentUser.id}`}>
           <img
-            src="path_to_profile_pic.jpg" // Add path to your profile picture
+            src="/assets/images/profile-placeholder.svg" // Add path to your profile picture
             alt="Profile"
             className="w-8 h-8 rounded-full cursor-pointer"
             whileHover={{ scale: 1.2 }}
           />
+          </Link>
         </div>
       </header>
 
