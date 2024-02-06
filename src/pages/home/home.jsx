@@ -4,9 +4,10 @@ import NewUI from '../../components/newUI/newui';
 
 
 const Home = () => {
+
   return (
   <section>
-    <NewUI/>
+    <NewUI />
   </section>
 
   

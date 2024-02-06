@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/authContext';
 const LeftBar = () => {
   const { pathname } = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+   const {currentUser}=useContext(AuthContext);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -16,7 +17,7 @@ const LeftBar = () => {
   const handleLogout = () => {
     // Your logout logic here
   };
-
+ console.log(currentUser)
   return (
     <AnimatePresence>
       {isSidebarOpen && (
@@ -35,11 +36,11 @@ const LeftBar = () => {
               </Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.5 }}>
-              <Link to={`/profile/:id`} className="flex gap-3 items-center">
+              <Link to={`/profile/${currentUser.id}`} className="flex gap-3 items-center">
                 <img src="/assets/images/profile-placeholder.svg" alt="profile" className="h-14 w-14 rounded-full" />
                 <div className="flex flex-col">
-                  <p className="body-bold text-white">Binary Bosses</p>
-                  <p className="text-light-3 text-sm">User Name</p>
+                  <p className="body-bold text-white">{currentUser.name}</p>
+                  <p className="text-light-3 text-sm">{currentUser.username}</p>
                 </div>
               </Link>
             </motion.div>
@@ -67,7 +68,7 @@ const LeftBar = () => {
           </div>
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.5 }}>
             <Button onClick={handleLogout} className='shad-button_ghost pt-10 pl-4 mt-auto'>
-              <img src="/assets/images/logout-icon.svg" alt="Logout" />
+              <img src="/assets/images/logout.svg" alt="Logout" />
             </Button>
           </motion.div>
         </motion.div>

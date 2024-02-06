@@ -5,7 +5,7 @@ import { motion, useAnimation } from 'framer-motion';
 const NewUI = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const controls = useAnimation();
-
+ 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoaded(true);

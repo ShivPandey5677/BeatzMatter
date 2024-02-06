@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -9,13 +9,28 @@ import LanguageIcon from "@mui/icons-material/Language";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Posts from "../Posts";
+import { AuthContext } from '../../context/authContext';
+import { useLocation } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { makeRequest } from '../../axios';
 const Profile = () => {
+  const [openUpdate, setOpenUpdate] = useState(false);
+  const { currentUser } = useContext(AuthContext);
+  const userId = parseInt(useLocation().pathname.split("/")[2]);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["user"],
+    queryFn: () => makeRequest.get("/users/find/" + userId).then((res) => res.data)
+  });
+  
   return (
     <div className="">
-  
+      {isLoading ? (
+        "loading"
+      ) : (
+  <>
     <div className="w-full h-[300px] relative ">
-      <img src="https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className="w-full h-full object-cover"/>
-      <img src="/assets/images/background.png" alt="" className="w-[200px] h-[200px] rounded-[50%] object-cover absolute left-0 right-0 m-auto top-[200px]"/>
+      <img src={"/upload/"+data.coverPic} alt="" className="w-full h-full object-cover"/>
+      <img src={"/upload/"+data.profilePic} alt="" className="w-[200px] h-[200px] rounded-[50%] object-cover absolute left-0 right-0 m-auto top-[200px]"/>
     </div>
     <div className='px-[20px] py-[70px] md:p-[20px] sm:p-[10px]'>
       <div className="h-[180px] shadow-lg rounded-lg bg-[white] text-[#000] p-[50px] flex items-center justify-between mb-[20px] md:flex-col md:h-30vh md:p-[20px] md:mt-[100px]">
@@ -56,7 +71,7 @@ const Profile = () => {
       </div>
         
     </div>
-
+    </>)}
     </div>
    
   )
