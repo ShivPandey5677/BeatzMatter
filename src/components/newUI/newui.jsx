@@ -10,7 +10,7 @@ const NewUI = () => {
     const timeout = setTimeout(() => {
       setIsLoaded(true);
       controls.start({ opacity: 1, translateY: 0, transition: { duration: 0.3 } });
-    }, 250); // Simulating a 3-second loading time, adjust as needed
+    }, ); // Simulating a 3-second loading time, adjust as needed
 
     return () => clearTimeout(timeout);
   }, [controls]);
