@@ -235,7 +235,32 @@
   .post-card_img {
     @apply h-64 xs:h-[400px] lg:h-[450px] w-full rounded-[24px] object-cover mb-5;
   }
+  .text-gradient {
+    background: radial-gradient(
+      64.18% 64.18% at 71.16% 35.69%,
+      #ebf4f4 0.89%,
+      #6d6b6c 17.23%,
+      #5b5a5a 42.04%,
+      #303131 55.12%,
+      #060606 71.54%,
+      #0e0f0f 100%
+    );
+  }
+  .gradient-text {
+    background-image: linear-gradient(to right, #c466ef, #630b66); /* Gradient colors */
+    -webkit-background-clip: text; /* For webkit-based browsers like Chrome and Safari */
+    background-clip: text; /* Specifies the painting area of the background */
+    color: transparent; /* Make the text transparent to reveal the gradient background */
+  }
+  .gradient-border {
 
+    border-width: 5px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #bc3fcd, #760285);
+    border-image-slice: 1;
+    border-radius: 10px ;
+    padding: 10px;
+  }
   /* Topbar */
   .topbar {
     @apply sticky top-0 z-50 md:hidden w-full;
@@ -244,6 +269,17 @@
   /* User card */
   .user-card {
     @apply flex-center flex-col gap-4 border border-dark-4 rounded-[20px] px-5 py-8;
+  }
+  .bg-blue-gradient {
+    background: linear-gradient(
+      157.81deg,
+      #daacea -43.27%,
+      #da93ee -21.24%,
+      #cc7ded 12.19%,
+      #bb59ec 29.82%,
+      #a347dc 51.94%,
+      #470453 90.29%
+    );
   }
 }
 
